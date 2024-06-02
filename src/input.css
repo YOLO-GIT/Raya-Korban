@@ -4,6 +4,10 @@
 
 @layer components {
 
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
     .background-animate {
         background-size: 400%;
 
