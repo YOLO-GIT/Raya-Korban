@@ -4,6 +4,7 @@
   },
   "dependencies": {
     "flowbite": "^2.3.0",
+    "gsap": "^3.12.5",
     "npm": "^10.8.0"
   },
   "scripts": {
