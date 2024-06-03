@@ -128,4 +128,11 @@
     .fancy:hover>.outer:nth-child(10) {
         transform: translate(0%, 0%);
     }
+
+    .image-bg {
+        background-image: url("../image/bg_two.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
