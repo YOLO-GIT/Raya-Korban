@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="YOLO-GIT" />
+    <meta name="keywords" content="raya korban, makan lembu/kambing, bersyukur" />
+    <meta name="description" content="Raya AidilAdha. Orang Melayu mesti tahu tentang ini." />
+    <meta http-equiv="refresh" content="120" />
+    <!-- Add Open Graph tags for better social media sharing -->
+    <meta property="og:title" content="Raya AidilAdha" />
+    <meta property="og:description" content="Raya AidilAdha. Orang Melayu mesti tahu tentang ini." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="" />
+    <!-- Other Graph Tags -->
+    <meta name="twitter:title" content="Raya AidilAdha" />
+    <meta name="twitter:description" content="Raya AidilAdha. Orang Melayu mesti tahu tentang ini." />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:card" content="Raya AidilAdha is here!" />
+    <link rel="stylesheet" href="../src/output.css">
+    <title>Raya AidilAdha</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="relative top-0 z-50 w-full bg-gradient-to-r from-yellow-200 to-green-600 border-b border-gray-200">
+        <div class="px-3 py-3 lg:px-5 lg:pl-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center justify-start rtl:justify-end">
+                    <a href="https://github.com/YOLO-GIT" class="flex ms-2 md:me-24">
+                        <img src="logo.png" class="h-8 me-3" alt="raya logo" />
+                        <span
+                            class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-black">YOLO-GIT</span>
+                    </a>
+                </div>
+                <!-- Future Content -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Game Slicing Section -->
+    <div class="flex flex-col items-center justify-center h-screen">
+        <h1 class="text-3xl font-bold mb-4">Slash the Image!</h1>
+        <div id="game">
+            <img src="../image/sheep.png" alt="Slashable" id="slashable-image" class="w-64 h-64 object-cover">
+        </div>
+        <p id="message" class="mt-4 text-lg"></p>
+        <p id="timer" class="mt-2 text-lg"></p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl flex sm:flex-row flex-col justify-between mx-auto text-center sm:text-left">
+            <div>
+                <p class="text-xs sm:text-lg font-mono">&copy; 2024 YOLO-GIT PROPERTY</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const image = document.getElementById('slashable-image');
+            const message = document.getElementById('message');
+            const timerElement = document.getElementById('timer');
+
+            let slashCount = 0;
+            const slashGoal = 15;
+            let timeLeft = 30;
+            let timer;
+
+            image.addEventListener('click', () => {
+                slashCount++;
+                if (slashCount >= slashGoal) {
+                    clearInterval(timer);
+                    message.textContent = 'You win!';
+                }
+            });
+
+            function updateTimer() {
+                timeLeft--;
+                timerElement.textContent = `Time left: ${timeLeft}s`;
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    if (slashCount < slashGoal) {
+                        message.textContent = 'You lose!';
+                    }
+                }
+            }
+
+            timer = setInterval(updateTimer, 1000);
+        });
+    </script>
+</body>
+
+</html>
