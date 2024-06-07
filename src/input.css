@@ -136,16 +136,18 @@
         background-size: cover;
     }
 
-    .custom-container {
+    #game {
         position: relative;
+        width: 256px;
+        /* Adjust according to your image size */
+        height: 256px;
+        /* Adjust according to your image size */
     }
 
-    canvas {
-        /* position: fixed; */
-        left: 50%;
-        bottom: 50%;
-        transform: translate(-50%, -50%);
-        /* max-width: 100vw;
-        max-height: 100vh; */
+    #slash-animation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 20;
     }
 }
