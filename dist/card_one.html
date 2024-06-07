@@ -40,10 +40,13 @@
     </nav>
 
     <!-- Game Slicing Section -->
-    <div class="flex flex-col items-center justify-center h-screen">
+    <div class="flex flex-col items-center justify-center h-screen bg-black">
         <h1 class="text-3xl font-bold mb-4">Slash the Image!</h1>
-        <div id="game">
-            <img src="../image/sheep.png" alt="Slashable" id="slashable-image" class="w-64 h-64 object-cover bg-black">
+        <div id="game" class="relative">
+            <img src="../image/sheep.png" alt="Slashable" id="slashable-image"
+                class="w-64 h-64 object-cover bg-black relative z-10">
+            <img src="../image/slash_two.gif" alt="Slash Animation" id="slash-animation"
+                class="absolute top-0 left-0 w-64 h-64 hidden">
         </div>
         <p id="message" class="mt-4 text-lg"></p>
         <p id="timer" class="mt-2 text-lg"></p>
@@ -58,12 +61,24 @@
         </div>
     </footer>
 
+    <audio id="goat-sound-1" src="../sounds/goat1.mp3" preload="auto"></audio>
+    <audio id="goat-sound-2" src="../sounds/goat2.mp3" preload="auto"></audio>
+    <audio id="goat-sound-3" src="../sounds/goat3.mp3" preload="auto"></audio>
+
+
     <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const image = document.getElementById('slashable-image');
+            const animation = document.getElementById('slash-animation');
             const message = document.getElementById('message');
             const timerElement = document.getElementById('timer');
+
+            const sounds = [
+                document.getElementById('goat-sound-1'),
+                document.getElementById('goat-sound-2'),
+                document.getElementById('goat-sound-3')
+            ];
 
             let slashCount = 0;
             const slashGoal = 15;
@@ -71,6 +86,18 @@
             let timer;
 
             image.addEventListener('click', () => {
+                // Show the slashing animation
+                animation.classList.remove('hidden');
+
+                // Hide the animation after a short delay to simulate the effect
+                setTimeout(() => {
+                    animation.classList.add('hidden');
+                }, 350); // Adjust the delay to match your animation duration
+
+                // Play a random goat sound
+                const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
+                randomSound.play();
+
                 slashCount++;
                 if (slashCount >= slashGoal) {
                     clearInterval(timer);
@@ -92,6 +119,7 @@
             timer = setInterval(updateTimer, 1000);
         });
     </script>
+
 </body>
 
 </html>
