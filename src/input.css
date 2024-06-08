@@ -144,7 +144,8 @@
         /* Adjust according to your image size */
     }
 
-    #slash-animation {
+    #slash-animation,
+    #double-slash-animation {
         position: absolute;
         top: 0;
         left: 0;

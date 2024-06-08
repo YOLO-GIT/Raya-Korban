@@ -45,7 +45,9 @@
         <div id="game" class="relative">
             <img src="../image/sheep.png" alt="Slashable" id="slashable-image"
                 class="w-64 h-64 object-cover bg-black relative z-10">
-            <img src="../image/slash_two.gif" alt="Slash Animation" id="slash-animation"
+            <img src="../image/slash.gif" alt="Slash Animation" id="slash-animation"
+                class="absolute top-0 left-0 w-64 h-64 hidden">
+            <img src="../image/slash_two.gif" alt="Double Slash Animation" id="double-slash-animation"
                 class="absolute top-0 left-0 w-64 h-64 hidden">
         </div>
         <p id="message" class="mt-4 text-lg"></p>
@@ -71,6 +73,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const image = document.getElementById('slashable-image');
             const animation = document.getElementById('slash-animation');
+            const doubleAnimation = document.getElementById('double-slash-animation');
             const message = document.getElementById('message');
             const timerElement = document.getElementById('timer');
 
@@ -84,12 +87,24 @@
             const slashGoal = 15;
             let timeLeft = 30;
             let timer;
+            let clickTimeout;
 
-            image.addEventListener('click', () => {
-                // Show the slashing animation
+            image.addEventListener('click', (event) => {
+                if (clickTimeout) {
+                    clearTimeout(clickTimeout);
+                    clickTimeout = null;
+                    handleDoubleClick();
+                } else {
+                    clickTimeout = setTimeout(() => {
+                        clickTimeout = null;
+                        handleClick();
+                    }, 250);
+                }
+            });
+
+            function handleClick() {
+                // Show the single slash animation
                 animation.classList.remove('hidden');
-
-                // Hide the animation after a short delay to simulate the effect
                 setTimeout(() => {
                     animation.classList.add('hidden');
                 }, 350); // Adjust the delay to match your animation duration
@@ -103,7 +118,25 @@
                     clearInterval(timer);
                     message.textContent = 'You win!';
                 }
-            });
+            }
+
+            function handleDoubleClick() {
+                // Show the double slash animation
+                doubleAnimation.classList.remove('hidden');
+                setTimeout(() => {
+                    doubleAnimation.classList.add('hidden');
+                }, 350); // Adjust the delay to match your animation duration
+
+                // Play a random goat sound
+                const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
+                randomSound.play();
+
+                slashCount++;
+                if (slashCount >= slashGoal) {
+                    clearInterval(timer);
+                    message.textContent = 'You win!';
+                }
+            }
 
             function updateTimer() {
                 timeLeft--;
@@ -119,7 +152,6 @@
             timer = setInterval(updateTimer, 1000);
         });
     </script>
-
 </body>
 
 </html>
