@@ -7,7 +7,6 @@
     <meta name="author" content="YOLO-GIT" />
     <meta name="keywords" content="raya korban, makan lembu/kambing, bersyukur" />
     <meta name="description" content="Raya AidilAdha. Orang Melayu mesti tahu tentang ini." />
-    <meta http-equiv="refresh" content="120" />
     <!-- Add Open Graph tags for better social media sharing -->
     <meta property="og:title" content="Raya AidilAdha" />
     <meta property="og:description" content="Raya AidilAdha. Orang Melayu mesti tahu tentang ini." />
@@ -35,6 +34,28 @@
                     </a>
                 </div>
                 <!-- Future Content -->
+                <div class="flex items-center">
+                    <div class="flex items-center ms-3">
+                        <a href="../index.html">
+                            <button data-tooltip-target="tooltip-default" data-tooltip-placement="left" type="button"
+                                aria-expanded="false">
+                                <svg class="w-8 h-8 text-black dark:text-white" data-slot="icon" fill="none"
+                                    stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </a>
+                    </div>
+
+                    <div id="tooltip-default" role="tooltip"
+                        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                        Return to Home Page
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -50,8 +71,8 @@
             <img src="../image/slash_two.gif" alt="Double Slash Animation" id="double-slash-animation"
                 class="absolute top-0 left-0 w-64 h-64 hidden">
         </div>
-        <p id="message" class="mt-4 text-lg"></p>
-        <p id="timer" class="mt-2 text-lg"></p>
+        <p id="message" class="mt-4 text-lg text-white font-extrabold"></p>
+        <p id="timer" class="mt-2 text-lg text-white font-semibold"></p>
     </div>
 
     <!-- Footer -->
@@ -63,12 +84,11 @@
         </div>
     </footer>
 
-    <audio id="goat-sound-1" src="../sounds/goat1.mp3" preload="auto"></audio>
-    <audio id="goat-sound-2" src="../sounds/goat2.mp3" preload="auto"></audio>
-    <audio id="goat-sound-3" src="../sounds/goat3.mp3" preload="auto"></audio>
-
-
-    <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
+    <audio id="goat-sound-1" src="../audio/goat1.mp3" preload="auto"></audio>
+    <audio id="goat-sound-2" src="../audio/goat2.mp3" preload="auto"></audio>
+    <audio id="goat-sound-3" src="../audio/goat3.mp3" preload="auto"></audio>
+    <audio id="swing" src="../audio/swing.mp3" preload="auto"></audio>
+    <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const image = document.getElementById('slashable-image');
@@ -77,10 +97,14 @@
             const message = document.getElementById('message');
             const timerElement = document.getElementById('timer');
 
-            const sounds = [
+            const goatSounds = [
                 document.getElementById('goat-sound-1'),
                 document.getElementById('goat-sound-2'),
                 document.getElementById('goat-sound-3')
+            ];
+
+            const slashSounds = [
+                document.getElementById('swing')
             ];
 
             let slashCount = 0;
@@ -109,9 +133,13 @@
                     animation.classList.add('hidden');
                 }, 350); // Adjust the delay to match your animation duration
 
+                // Play a random slash sound
+                const randomSlashSound = slashSounds[Math.floor(Math.random() * slashSounds.length)];
+                randomSlashSound.play();
+
                 // Play a random goat sound
-                const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
-                randomSound.play();
+                const randomGoatSound = goatSounds[Math.floor(Math.random() * goatSounds.length)];
+                randomGoatSound.play();
 
                 slashCount++;
                 if (slashCount >= slashGoal) {
@@ -127,9 +155,13 @@
                     doubleAnimation.classList.add('hidden');
                 }, 350); // Adjust the delay to match your animation duration
 
+                // Play a random slash sound
+                const randomSlashSound = slashSounds[Math.floor(Math.random() * slashSounds.length)];
+                randomSlashSound.play();
+
                 // Play a random goat sound
-                const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
-                randomSound.play();
+                const randomGoatSound = goatSounds[Math.floor(Math.random() * goatSounds.length)];
+                randomGoatSound.play();
 
                 slashCount++;
                 if (slashCount >= slashGoal) {
