@@ -18,7 +18,7 @@
     <meta name="twitter:image" content="" />
     <meta name="twitter:card" content="Raya AidilAdha is here!" />
     <link rel="stylesheet" href="../src/output.css">
-    <title>Raya AidilAdha</title>
+    <title>Slash the GOAT</title>
 </head>
 
 <body>
@@ -73,6 +73,7 @@
         </div>
         <p id="message" class="mt-4 text-lg text-white font-extrabold"></p>
         <p id="timer" class="mt-2 text-lg text-white font-semibold"></p>
+        <button id="redirect-button" class="hidden bg-blue-500 text-white py-2 px-4 rounded mt-4">Victory Scene</button>
     </div>
 
     <!-- Footer -->
@@ -88,6 +89,7 @@
     <audio id="goat-sound-2" src="../audio/goat2.mp3" preload="auto"></audio>
     <audio id="goat-sound-3" src="../audio/goat3.mp3" preload="auto"></audio>
     <audio id="swing" src="../audio/swing.mp3" preload="auto"></audio>
+
     <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -96,6 +98,7 @@
             const doubleAnimation = document.getElementById('double-slash-animation');
             const message = document.getElementById('message');
             const timerElement = document.getElementById('timer');
+            const redirectButton = document.getElementById('redirect-button');
 
             const goatSounds = [
                 document.getElementById('goat-sound-1'),
@@ -145,6 +148,7 @@
                 if (slashCount >= slashGoal) {
                     clearInterval(timer);
                     message.textContent = 'You win!';
+                    redirectButton.classList.remove('hidden');
                 }
             }
 
@@ -167,8 +171,14 @@
                 if (slashCount >= slashGoal) {
                     clearInterval(timer);
                     message.textContent = 'You win!';
+                    redirectButton.classList.remove('hidden');
                 }
             }
+
+            redirectButton.addEventListener('click', () => {
+                window.location.href =
+                    'victory.html'; // Replace with the URL you want to redirect to
+            });
 
             function updateTimer() {
                 timeLeft--;
