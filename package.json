@@ -5,7 +5,8 @@
   "dependencies": {
     "flowbite": "^2.3.0",
     "gsap": "^3.12.5",
-    "npm": "^10.8.0"
+    "npm": "^10.8.0",
+    "three": "^0.165.0"
   },
   "scripts": {
     "dev": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
