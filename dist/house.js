@@ -7,8 +7,11 @@ import {
 import {
     GLTFLoader
 } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
+import {
+    MeshStandardMaterial
+} from "../node_modules/three/build/three.module.js"
 
-let object1, object2;
+let object1;
 
 const scene = new THREE.Scene();
 
@@ -31,7 +34,7 @@ loader.load(
     function (gltf) {
         object1 = gltf.scene;
         scene.add(object1);
-        object1.position.set(-10, 0, 0); // Position the first object
+        object1.position.set(0, 0, 0); // Position the first object
     },
     function (xhr) {
         console.log((xhr.loaded / xhr.total * 100) + '% loaded');
@@ -42,22 +45,20 @@ loader.load(
     }
 );
 
-// Load the second .gltf file
-loader.load(
-    '../3d/second_scene.gltf', // Change this to the path of your second .gltf file
-    function (gltf) {
-        object2 = gltf.scene;
-        scene.add(object2);
-        object2.position.set(10, 0, 0); // Position the second object
-    },
-    function (xhr) {
-        console.log((xhr.loaded / xhr.total * 100) + '% loaded');
-        console.log("Second object loaded");
-    },
-    function (error) {
-        console.error(error);
-    }
+const meatTexture = new THREE.TextureLoader().load('meat.png');
+
+const meat = new THREE.Mesh(
+    new THREE.SphereGeometry(2, 32, 32), // Smaller radius and segment counts
+    new MeshStandardMaterial({
+        map: meatTexture
+    })
 );
+
+meat.position.z = 0;
+meat.position.y = 10;
+meat.position.x = -15;
+
+scene.add(meat);
 
 const pointLight = new THREE.PointLight(0xffffff);
 pointLight.position.set(5, 5, 5);
@@ -69,14 +70,6 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 function animate() {
     requestAnimationFrame(animate);
-
-    // Example of rotating both objects
-    if (object1) {
-        object1.rotation.y += 0.01;
-    }
-    if (object2) {
-        object2.rotation.y -= 0.01;
-    }
 
     controls.update();
 
