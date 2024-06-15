@@ -23,7 +23,10 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(50);
+camera.position.setZ(-40);
+
+const cloudBG = new THREE.TextureLoader().load('../image/sky.jpg');
+scene.background = cloudBG;
 
 // Instantiate a loader for the .gltf files
 const loader = new GLTFLoader();
@@ -38,7 +41,7 @@ loader.load(
     },
     function (xhr) {
         console.log((xhr.loaded / xhr.total * 100) + '% loaded');
-        console.log("First object loaded");
+        console.log("6");
     },
     function (error) {
         console.error(error);
@@ -59,6 +62,21 @@ meat.position.y = 10;
 meat.position.x = -15;
 
 scene.add(meat);
+
+const eyebollTexture = new THREE.TextureLoader().load('../image/eye.gif');
+
+const Eyeboll = new THREE.Mesh(
+    new THREE.SphereGeometry(100, 500, 500),
+    new THREE.MeshStandardMaterial({
+        map: eyebollTexture
+    })
+);
+
+Eyeboll.position.z = 30;
+Eyeboll.position.y = 300;
+Eyeboll.position.x = 50;
+
+scene.add(Eyeboll);
 
 const pointLight = new THREE.PointLight(0xffffff);
 pointLight.position.set(5, 5, 5);
