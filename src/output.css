@@ -1359,10 +1359,6 @@ body::-webkit-scrollbar {
   width: 100%;
 }
 
-.w-screen {
-  width: 100vw;
-}
-
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -1389,26 +1385,6 @@ body::-webkit-scrollbar {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.snap-x {
-  scroll-snap-type: x var(--tw-scroll-snap-strictness);
-}
-
-.snap-y {
-  scroll-snap-type: y var(--tw-scroll-snap-strictness);
-}
-
-.snap-mandatory {
-  --tw-scroll-snap-strictness: mandatory;
-}
-
-.snap-start {
-  scroll-snap-align: start;
-}
-
-.snap-center {
-  scroll-snap-align: center;
 }
 
 .grid-cols-1 {
@@ -1477,10 +1453,6 @@ body::-webkit-scrollbar {
 
 .overflow-hidden {
   overflow: hidden;
-}
-
-.overflow-scroll {
-  overflow: scroll;
 }
 
 .overflow-y-auto {
@@ -1931,6 +1903,15 @@ body::-webkit-scrollbar {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
+@media (min-width: 640px) {
+  .sm\:image-bg {
+    background-image: url("../image/bg_two.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
 .hover\:scale-105:hover {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
@@ -2026,6 +2007,11 @@ body::-webkit-scrollbar {
   background-color: rgb(31 41 55 / 0.3);
 }
 
+.dark\:bg-slate-500:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+}
+
 .dark\:text-gray-400:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
@@ -2039,6 +2025,11 @@ body::-webkit-scrollbar {
 .dark\:text-white:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.dark\:text-gray-900:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 .dark\:hover\:bg-blue-700:hover:is(.dark *) {
@@ -2070,6 +2061,10 @@ body::-webkit-scrollbar {
 }
 
 @media (min-width: 640px) {
+  .sm\:relative {
+    position: relative;
+  }
+
   .sm\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
@@ -2079,8 +2074,45 @@ body::-webkit-scrollbar {
     margin-top: 0px;
   }
 
+  .sm\:flex {
+    display: flex;
+  }
+
+  .sm\:h-96 {
+    height: 24rem;
+  }
+
+  .sm\:h-56 {
+    height: 14rem;
+  }
+
+  .sm\:w-full {
+    width: 100%;
+  }
+
   .sm\:flex-row {
     flex-direction: row;
+  }
+
+  .sm\:justify-center {
+    justify-content: center;
+  }
+
+  .sm\:overflow-hidden {
+    overflow: hidden;
+  }
+
+  .sm\:rounded-lg {
+    border-radius: 0.5rem;
+  }
+
+  .sm\:bg-slate-900 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+  }
+
+  .sm\:p-10 {
+    padding: 2.5rem;
   }
 
   .sm\:text-left {
@@ -2100,6 +2132,16 @@ body::-webkit-scrollbar {
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .sm\:text-gray-900 {
+    --tw-text-opacity: 1;
+    color: rgb(17 24 39 / var(--tw-text-opacity));
+  }
+
+  .sm\:text-gray-800 {
+    --tw-text-opacity: 1;
+    color: rgb(31 41 55 / var(--tw-text-opacity));
   }
 
   .sm\:delay-\[300ms\] {
@@ -2137,6 +2179,10 @@ body::-webkit-scrollbar {
     margin-inline-end: 6rem;
   }
 
+  .md\:flex {
+    display: flex;
+  }
+
   .md\:h-96 {
     height: 24rem;
   }
@@ -2165,6 +2211,10 @@ body::-webkit-scrollbar {
 }
 
 @media (min-width: 1024px) {
+  .lg\:relative {
+    position: relative;
+  }
+
   .lg\:col-span-5 {
     grid-column: span 5 / span 5;
   }
@@ -2186,6 +2236,14 @@ body::-webkit-scrollbar {
     display: flex;
   }
 
+  .lg\:h-96 {
+    height: 24rem;
+  }
+
+  .lg\:w-full {
+    width: 100%;
+  }
+
   .lg\:grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
@@ -2200,6 +2258,25 @@ body::-webkit-scrollbar {
 
   .lg\:gap-8 {
     gap: 2rem;
+  }
+
+  .lg\:space-y-4 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+  }
+
+  .lg\:bg-slate-900 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+  }
+
+  .lg\:p-10 {
+    padding: 2.5rem;
+  }
+
+  .lg\:p-4 {
+    padding: 1rem;
   }
 
   .lg\:px-5 {
