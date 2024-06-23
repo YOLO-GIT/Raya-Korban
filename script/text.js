@@ -77,7 +77,7 @@ words.forEach((word) => {
             y: -10,
             duration: 0.5,
             ease: "power3.inOut",
-            color: "gold",
+            color: "black",
             textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)",
         });
     });
