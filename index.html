@@ -23,38 +23,41 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="relative top-0 z-50 w-full bg-gradient-to-r from-yellow-200 to-green-600 border-b border-gray-200">
-        <div class="px-3 py-3 lg:px-5 lg:pl-3">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center justify-start rtl:justify-end">
-                    <a href="https://github.com/YOLO-GIT" class="flex ms-2 md:me-24">
-                        <img src="logo.png" class="h-8 me-3" alt="raya logo" />
-                        <span
-                            class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-black">YOLO-GIT</span>
-                    </a>
-                </div>
-                <!-- Future Content -->
-                <div class="flex items-center">
-                    <div class="flex items-center ms-3">
-                        <a href="unused/92e592d90b9548016776a6fb68dccded.html">
-                            <button type="button" aria-expanded="false">
-                                <svg class="w-8 h-8 text-green-600" data-slot="icon" fill="none" stroke-width="1.5"
-                                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                                    aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z">
-                                    </path>
-                                </svg>
-                            </button>
+    <div id="navbar">
+        <nav class="bg-gradient-to-r from-yellow-200 to-green-600 border-b border-gray-200">
+            <div class="px-3 py-3 lg:px-5 lg:pl-3">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center justify-start rtl:justify-end">
+                        <a href="https://github.com/YOLO-GIT" class="flex ms-2 md:me-24">
+                            <img src="logo.png" class="h-8 me-3" alt="raya logo" />
+                            <span
+                                class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-black">YOLO-GIT</span>
                         </a>
+                    </div>
+                    <!-- Future Content -->
+                    <div class="flex items-center">
+                        <div class="flex items-center ms-3">
+                            <a href="unused/92e592d90b9548016776a6fb68dccded.html">
+                                <button type="button" aria-expanded="false">
+                                    <svg class="w-8 h-8 text-green-600" data-slot="icon" fill="none" stroke-width="1.5"
+                                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                        aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
+
 
     <section>
-        <div class="absolute inset-0 flex justify-center items-center">
+        <div class="relative inset-0 flex justify-center items-center">
             <img src="image/raya_dua-2x-RIFE-RIFE3.1-20fps.gif" alt="Stunning GIF" class="gif" />
         </div>
     </section>
@@ -76,8 +79,8 @@
                     his obedience to Allah S.W.T.
                 </p>
             </div>
-            <div class="lg:mt-0 lg:col-span-5 lg:flex">
-                <img class="rounded-2xl w-full transform transition-transform hover:scale-105 ease-out duration-500 hover:shadow-lg"
+            <div class="lg:mt-0 lg:col-span-5 lg:flex mx-auto">
+                <img class="rounded-2xl w-60 sm:w-96 transform transition-transform hover:scale-105 ease-out duration-500 hover:shadow-lg"
                     src="image/context_one.png" alt="mockup">
             </div>
         </div>
@@ -91,8 +94,8 @@
             </h2>
             <!-- One -->
             <div class="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
-                <div
-                    class="mb-8 transform transition-transform hover:scale-105 ease-in-out duration-500 hover:shadow-lg">
+                <div class="w-80 sm:w-96 mx-auto sm:mx-0 mb-8 transform transition-transform hover:scale-105 ease-in-out
+                    duration-500 hover:shadow-lg">
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <button data-modal-target="default-modal" data-modal-toggle="default-modal">
                             <img class="rounded-t-lg" src="image/card_one.jpg" alt="card-one" />
@@ -139,8 +142,8 @@
                 </div>
 
                 <!-- Two -->
-                <div
-                    class="mb-8 transform transition-transform hover:scale-105 ease-in-out duration-500 hover:shadow-lg">
+                <div class="w-80 sm:w-96 mx-auto sm:mx-0 mb-8 transform transition-transform hover:scale-105 ease-in-out
+                    duration-500 hover:shadow-lg">
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <button data-modal-target="default-two" data-modal-toggle="default-two">
                             <img class="rounded-t-lg" src="image/card_two.jpg" alt="card-two" />
@@ -187,8 +190,8 @@
                 </div>
 
                 <!-- Three -->
-                <div
-                    class="mb-8 transform transition-transform hover:scale-105 ease-in-out duration-500 hover:shadow-lg">
+                <div class="w-80 sm:w-96 mx-auto sm:mx-0 mb-8 transform transition-transform hover:scale-105 ease-in-out
+                    duration-500 hover:shadow-lg">
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <button data-modal-target="default-three" data-modal-toggle="default-three">
                             <img class="rounded-t-lg" src="image/card_three.jpg" alt="card-three" />
@@ -242,50 +245,49 @@
 
     <!-- Context Two -->
     <section class="bg-black">
-        <div class="grid max-w-screen-lg px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-            <div class="lg:col-span-5 lg:flex justify-center">
-                <canvas width="400" height="230" id="image-sequence" class="rounded-2xl"></canvas>
-            </div>
-            <div class="ml-auto place-self-center lg:col-span-7 mt-5 sm:mt-0 rounded-md p-6">
-                <h1
-                    class="text-center sm:text-left max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-gray-300">
-                    Important thing to know.
-                </h1>
-                <p class="text-center sm:text-left mb-6 font-semibold text-gray-200 md:text-lg">
-                    The tradition during Hari Raya Aidiladha involves slaughtering animals and dividing the meat into
-                    three equal parts - for family, for relatives and friends, and for the poor. The purpose is to
-                    ensure that every Muslim can eat meat.
-                </p>
+        <div class="container mx-auto px-4 py-8 lg:py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <div class="w-full">
+                    <canvas width="400" height="230" id="image-sequence" class="rounded-2xl"></canvas>
+                </div>
+                <div class="flex flex-col justify-center mt-5 sm:mt-0">
+                    <h1 class="text-center sm:text-right max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-gray-300"
+                        id="text_four">
+                        Important thing to know.
+                    </h1>
+                    <p class="text-center sm:text-right mt-6 font-semibold text-gray-200 md:text-lg max-w-lg">
+                        The tradition during Hari Raya Aidiladha involves slaughtering animals and dividing the meat
+                        into
+                        three equal parts - for family, for relatives and friends, and for the poor. The purpose is to
+                        ensure that every Muslim can eat meat.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Qr -->
-    <section class="sec bg-slate-50">
-        <div class="sm:delay-[300ms] sm:duration-[600ms] sm:taos:translate-x-[200px] sm:taos:opacity-0"
-            data-taos-offset="400">
-            <div class="container mx-auto px-4 py-8 lg:py-16">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
-                    <div class="lg:flex">
-                        <img class="w-full transform transition-transform hover:scale-105 ease-in-out duration-500 hover:shadow-lg"
-                            src="image/qr.jpeg" alt="qr duit">
+    <section class="bg-slate-50">
+        <div class="container mx-auto px-4 py-8 lg:py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <div class="flex flex-col justify-center mt-5 sm:mt-0">
+                    <h1
+                        class="text-center sm:text-left max-w-lg mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-black">
+                        Want to show appreciation besides passing the meat?
+                    </h1>
+                    <p class="text-center sm:text-left font-semibold max-w-lg mb-6 text-gray-500 md:text-lg lg:text-xl">
+                        Give me money.<br>🤑🤑🤑
+                    </p>
+                    <div class="mx-auto sm:mx-0">
+                        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+                            data-name="bmc-button" data-slug="YOLOGIT" data-color="#FF5F5F" data-emoji=""
+                            data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000"
+                            data-font-color="#ffffff" data-coffee-color="#FFDD00"></script>
                     </div>
-                    <div class="flex flex-col justify-center mt-5 sm:mt-0">
-                        <h1
-                            class="text-center sm:text-left max-w-lg mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-black">
-                            Want to show appreciation besides passing the meat?
-                        </h1>
-                        <p
-                            class="text-center sm:text-left font-semibold max-w-lg mb-6 text-gray-500 md:text-lg lg:text-xl">
-                            Give me money.<br>🤑🤑🤑
-                        </p>
-                        <div class="mx-auto lg:mx-0 xl:mx-0 sm:mx-0">
-                            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
-                                data-name="bmc-button" data-slug="YOLOGIT" data-color="#FF5F5F" data-emoji=""
-                                data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000"
-                                data-font-color="#ffffff" data-coffee-color="#FFDD00"></script>
-                        </div>
-                    </div>
+                </div>
+                <div class="mx-auto">
+                    <img class="w-96 transform transition-transform hover:scale-105 ease-in-out duration-500 hover:shadow-lg"
+                        src="image/qr.jpeg" alt="qr duit">
                 </div>
             </div>
         </div>
@@ -370,6 +372,8 @@
     <script src="node_modules/gsap/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
     <script src="script/text.js"></script>
+    <script src="script/help.js"></script>
+    <script src="script/text_four.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", (event) => {
             gsap.registerPlugin(ScrollTrigger);
