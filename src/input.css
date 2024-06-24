@@ -158,6 +158,18 @@
         object-fit: cover;
         /* This property maintains the aspect ratio and covers the entire container */
         z-index: -1;
-        opacity: 0.5;
+        opacity: 50;
+    }
+
+    #navbar {
+        z-index: 9999;
+        position: fixed;
+        /* Make it stick/fixed */
+        top: -80px;
+        /* Hide the navbar 50 px outside of the top view */
+        width: 100%;
+        /* Full width */
+        transition: top 0.3s;
+        /* Transition effect when sliding down (and up) */
     }
 }
