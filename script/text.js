@@ -144,3 +144,9 @@ words.forEach((word) => {
         });
     });
 });
+
+// Split the text into words
+splitText = new SplitType("#text_four", {
+    type: "words",
+});
+words = splitText.words;
