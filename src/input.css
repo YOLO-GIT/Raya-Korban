@@ -172,4 +172,10 @@
         transition: top 0.3s;
         /* Transition effect when sliding down (and up) */
     }
+
+    /* For .sec section */
+    .sec {
+        @apply relative bg-white p-20;
+        /* Adjust padding as needed */
+    }
 }
