@@ -997,6 +997,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.bruh::-webkit-scrollbar {
+  display: none;
+}
+
 .background-animate {
   background-size: 400%;
   animation: AnimationName 5s ease infinite;
@@ -1161,6 +1165,25 @@ body::-webkit-scrollbar {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding: 5rem;
   /* Adjust padding as needed */
+}
+
+/* include the font here using @font-face */
+
+@font-face {
+  font-family: 'myFontName';
+
+  /* this value can be anything you wish - it gets used in the class definition below */
+
+  src: url('../font/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf');
+
+  /* add the file path to your font here */
+}
+
+/* define a class and add the new font */
+
+#customFont {
+  font-family: myFontName;
+  /* property value must match value in @font-face*/
 }
 
 .sr-only {
@@ -1344,6 +1367,10 @@ body::-webkit-scrollbar {
   height: auto;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .h-screen {
   height: 100vh;
 }
@@ -1396,6 +1423,10 @@ body::-webkit-scrollbar {
   width: 100%;
 }
 
+.w-screen {
+  width: 100vw;
+}
+
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -1422,6 +1453,18 @@ body::-webkit-scrollbar {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.snap-y {
+  scroll-snap-type: y var(--tw-scroll-snap-strictness);
+}
+
+.snap-mandatory {
+  --tw-scroll-snap-strictness: mandatory;
+}
+
+.snap-start {
+  scroll-snap-align: start;
 }
 
 .grid-cols-1 {
@@ -1480,6 +1523,10 @@ body::-webkit-scrollbar {
 
 .self-center {
   align-self: center;
+}
+
+.overflow-scroll {
+  overflow: scroll;
 }
 
 .overflow-y-auto {
@@ -1768,6 +1815,11 @@ body::-webkit-scrollbar {
 
 .text-5xl {
   font-size: 3rem;
+  line-height: 1;
+}
+
+.text-8xl {
+  font-size: 6rem;
   line-height: 1;
 }
 

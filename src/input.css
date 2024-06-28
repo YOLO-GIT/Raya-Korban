@@ -8,6 +8,10 @@
         display: none;
     }
 
+    .bruh::-webkit-scrollbar {
+        display: none;
+    }
+
     .background-animate {
         background-size: 400%;
 
@@ -177,5 +181,19 @@
     .sec {
         @apply relative bg-white p-20;
         /* Adjust padding as needed */
+    }
+
+    /* include the font here using @font-face */
+    @font-face {
+        font-family: 'myFontName';
+        /* this value can be anything you wish - it gets used in the class definition below */
+        src: url('../font/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf');
+        /* add the file path to your font here */
+    }
+
+    /* define a class and add the new font */
+    #customFont {
+        font-family: myFontName;
+        /* property value must match value in @font-face*/
     }
 }
