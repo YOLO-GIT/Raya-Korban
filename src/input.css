@@ -196,4 +196,11 @@
         font-family: myFontName;
         /* property value must match value in @font-face*/
     }
+
+    .image-bg-two {
+        background-image: url("../unused/images/question_markwatchv=dCFoUevIp_s.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
