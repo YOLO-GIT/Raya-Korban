@@ -1186,6 +1186,13 @@ body::-webkit-scrollbar {
   /* property value must match value in @font-face*/
 }
 
+.image-bg-two {
+  background-image: url("../unused/images/watchquestion_markv=dCFoUevIp_s.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -2345,6 +2352,10 @@ body::-webkit-scrollbar {
 
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:items-center {
+    align-items: center;
   }
 
   .lg\:gap-8 {
